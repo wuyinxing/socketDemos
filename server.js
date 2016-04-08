@@ -14,13 +14,12 @@ var cache = {};
  */
 var server = http.createServer(function (request,response) {
     var filePath = false ;
-    if(request.url == '/'){
+        if(request.url == '/'){
         filePath = 'public/index.html';   //默认返回HTML
     }else{
         filePath = 'public' + request.url;  //转换成相应的URL
     }
     var absPath = './' + filePath;
-
     serveStatic(response,cache,absPath);
 });
 server.listen(3000,function(){

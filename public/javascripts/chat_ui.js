@@ -94,7 +94,7 @@ function processUserInput(chatApp,socket){
             $("#messages").append(divSystemContentElement(message));
         }
     }else{
-        chatApp.sendMessage($('#room').text(),message);
+        chatApp.sendMessage($('#room-list').text(),message);
         $('#messages').append(divEscapedContentElement(message));
         $('#messages').scrollTop($('#messages').prop('scrollHeight'));
     }
